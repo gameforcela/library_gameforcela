@@ -5,18 +5,9 @@ using UnityEngine;
 public class interaktion : MonoBehaviour
 {
 
-    private bool dOpen = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public GameObject Ore;
+    public GameObject Hero;
+    public bool OreActive = false;
 
     public void OnMouseEnter()
     {
@@ -31,6 +22,15 @@ public class interaktion : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("down");
-       
+
+        OreActive = true;
+        if (OreActive == true)
+        {
+            Ore.SetActive(true);
+        } else
+        {
+            Ore.SetActive(false);
+        }       
     }
+
 }
