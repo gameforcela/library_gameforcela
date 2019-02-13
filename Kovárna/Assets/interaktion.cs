@@ -1,36 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class interaktion : MonoBehaviour
+
+public class Interaktion : MonoBehaviour
 {
 
-    public GameObject Ore;
-    public GameObject Hero;
-    public bool OreActive = false;
+    public GameObject ObjectI;
+    public bool ObjectActive = false;
 
-    public void OnMouseEnter()
-    {
-        Debug.Log("ONMOUSE");
-    }
+    public GameObject MoveManager;
 
-    public void OnMouseExit()
-    {
-        Debug.Log("exit");
-    }
 
     public void OnMouseDown()
     {
-        Debug.Log("down");
 
-        OreActive = true;
-        if (OreActive == true)
+        ObjectActive = true;
+        if (ObjectActive == true)
         {
-            Ore.SetActive(true);
-        } else
+            ObjectI.SetActive(true);
+            MoveManager.SetActive(false);
+
+        }
+        else
         {
-            Ore.SetActive(false);
-        }       
+            ObjectI.SetActive(false);
+            MoveManager.SetActive(true);
+        }
+
+
     }
+
+
 
 }

@@ -1885,9 +1885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff1f22934855fc49bc558bd2b3b91a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ore: {fileID: 93970178}
-  Hero: {fileID: 0}
-  OreActive: 0
+  ObjectI: {fileID: 0}
+  ObjectActive: 0
+  MoveManager: {fileID: 0}
 --- !u!222 &93970181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3391,7 +3391,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh11736
+  m_Name: pb_Mesh11762
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4333,7 +4333,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh4466
+  m_Name: pb_Mesh11944
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9080,9 +9080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff1f22934855fc49bc558bd2b3b91a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ore: {fileID: 93970178}
-  Hero: {fileID: 0}
-  OreActive: 0
+  ObjectI: {fileID: 93970178}
+  ObjectActive: 0
+  MoveManager: {fileID: 1063603686}
 --- !u!64 &620442154
 MeshCollider:
   m_ObjectHideFlags: 0
