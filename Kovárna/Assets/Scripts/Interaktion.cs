@@ -8,27 +8,19 @@ public class Interaktion : MonoBehaviour
 {
 
     public GameObject ObjectI;
-    public bool ObjectActive = false;
-
     public GameObject MoveManager;
 
 
     public void OnMouseDown()
     {
-
-        ObjectActive = true;
-        if (ObjectActive == true)
-        {
+       
+        
+        
+        
             ObjectI.SetActive(true);
-            MoveManager.SetActive(false);
+            
 
-        }
-        else
-        {
-            ObjectI.SetActive(false);
-            MoveManager.SetActive(true);
-        }
-
+        
 
     }
 
