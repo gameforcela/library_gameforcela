@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 public class MouseManager : MonoBehaviour
 {
@@ -20,13 +19,29 @@ public class MouseManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value))
         {
+            bool door = false;
+            if (hit.collider.gameObject.tag == "Doorway")
+            {
+                Cursor.SetCursor(doorway, new Vector2(16, 16), CursorMode.Auto);
+                door = true;
+            }
+            else
+            {
+                Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
+            }
 
             // If environment surface is clicked, invoke callbacks.
-            if (Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject())
+            if (Input.GetMouseButtonDown(0))
             {
-                OnClickEnvironment.Invoke(hit.point);
-            
-                Debug.Log("HIT: " + hit.collider.gameObject);
+                if (door)
+                {
+                    Transform doorway = hit.collider.gameObject.transform;
+                    OnClickEnvironment.Invoke(doorway.position + doorway.forward * 10);
+                }
+                else
+                {
+                    OnClickEnvironment.Invoke(hit.point);
+                }
             }
         }
         else
